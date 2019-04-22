@@ -1,0 +1,13 @@
+.navbar{
+  background-color: #99a2e9;
+  display: flex;
+}
+ul{
+  display: flex;
+  list-style: none;
+}
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
