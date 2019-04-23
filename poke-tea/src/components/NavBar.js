@@ -24,7 +24,7 @@ class Navbar extends Component{
 
         <main>
           <Route path='/pokegeneration' component={PokeGeneration} />
-          <Route path='/pokelist' render={PokeList} />
+          <Route path='/pokelist' component={PokeList} />
           <Route path='/pokeinfo' render={PokeInfo} />
         </main>
       </div>
@@ -34,24 +34,3 @@ class Navbar extends Component{
 }
 
 export default Navbar
-
-
-// <nav className="navbar">
-//   <ul>
-//     <li>
-//       <Link to="/pokegeneration">PokeGeneration</Link>
-//     </li>
-//     <li>
-//       <Link to="/pokelist">PokeList</Link>
-//     </li>
-//
-//     <li>
-//       <Link to="/pokeinfo">PokeInfo</Link>
-//     </li>
-//   </ul>
-// </nav>
-// <main>
-//   <Route path="/pokegeneration" render={PokeGeneration}/>
-//   <Route path="/pokelist" render={PokeList}/>
-//   <Route path="/pokeinfo" render={PokeInfo}/>
-// </main>
