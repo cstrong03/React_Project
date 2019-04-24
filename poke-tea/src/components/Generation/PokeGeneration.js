@@ -1,62 +1,130 @@
 import React, { Component } from 'react'
 import { Route, Link } from "react-router-dom"
-import I from './I'
 
 class PokeGeneration extends Component{
+
+constructor(props){
+  super(props);
+  this.state = {
+    print:[]
+  }
+}
+
+  gimmeI = () => {
+    let counter=0;
+    let i = this.props.poke.map(pokemon => {
+      counter++;
+      let srcLink = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`
+        if (counter < 152){
+          return (<div key={pokemon.entry_number}>
+                <p>{pokemon.pokemon_species.name}</p>
+                <img src={srcLink} alt='images'/>
+            </div>)
+        }
+        })
+        this.setState({
+        print: i
+      })
+  }
+
+  gimmeII = () => {
+    let counter=0;
+    let i = this.props.poke.map(pokemon => {
+      counter++;
+      let srcLink = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`
+        if (counter > 151 && counter < 252){
+          return (<div key={pokemon.entry_number}>
+                <p>{pokemon.pokemon_species.name}</p>
+                <img src={srcLink} alt='images'/>
+            </div>)
+        }
+        })
+        this.setState({
+        print: i
+      })
+  }
+
+  gimmeIII = () => {
+    let counter=0;
+    let i = this.props.poke.map(pokemon => {
+      counter++;
+      let srcLink = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`
+        if (counter > 251 && counter < 387){
+          return (<div key={pokemon.entry_number}>
+                <p>{pokemon.pokemon_species.name}</p>
+                <img src={srcLink} alt='images'/>
+            </div>)
+        }
+        })
+        this.setState({
+        print: i
+      })
+  }
+
+  gimmeIV = () => {
+    let counter=0;
+    let i = this.props.poke.map(pokemon => {
+      counter++;
+      let srcLink = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`
+        if (counter > 386 && counter < 495){
+          return (<div key={pokemon.entry_number}>
+                <p>{pokemon.pokemon_species.name}</p>
+                <img src={srcLink} alt='images'/>
+            </div>)
+        }
+        })
+        this.setState({
+        print: i
+      })
+  }
+
+  gimmeV = () => {
+    let counter=0;
+    let i = this.props.poke.map(pokemon => {
+      counter++;
+      let srcLink = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`
+        if (counter > 494 && counter < 650){
+          return (<div key={pokemon.entry_number}>
+                <p>{pokemon.pokemon_species.name}</p>
+                <img src={srcLink} alt='images'/>
+            </div>)
+        }
+        })
+        this.setState({
+        print: i
+      })
+  }
+
+  gimmeVI = () => {
+    let counter=0;
+    let i = this.props.poke.map(pokemon => {
+      counter++;
+      let srcLink = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`
+        if (counter > 649 && counter < 721){
+          return (<div key={pokemon.entry_number}>
+                <p>{pokemon.pokemon_species.name}</p>
+                <img src={srcLink} alt='images'/>
+            </div>)
+        }
+        })
+        this.setState({
+        print: i
+      })
+  }
+
+
+
   render(){
     return(
       <div>
-        <ol>
-          <li>
-            <Link to='/red'>Red-Blue Version</Link>
-          </li>
-          <li>
-            <Link to='/red'>Yellow Version</Link>
-          </li>
-          <li>
-            <Link to='/red'>Gold-Silver Version</Link>
-          </li>
-          <li>
-            <Link to='/red'>Crystal Version</Link>
-          </li>
-          <li>
-            <Link to='/red'>Ruby-Sapphire Version</Link>
-          </li>
-          <li>
-            <Link to='/red'>Emerald Version</Link>
-          </li>
-          <li>
-            <Link to='/red'>LeafGreen-FireRed Version</Link>
-          </li>
-          <li>
-            <Link to='/red'>Diamond-Pearl Version</Link>
-          </li>
-          <li>
-            <Link to='/red'>Platinum Version</Link>
-          </li>
-          <li>
-            <Link to='/red'>HeartGold-SoulSilver Version</Link>
-          </li>
-          <li>
-            <Link to='/red'>Black-White Version</Link>
-          </li>
-          <li>
-            <Link to='/red'>Colosseum Version</Link>
-          </li>
-          <li>
-            <Link to='/red'>Black2-White2 Version</Link>
-          </li>
-          <li>
-            <Link to='/red'>X-Y Version</Link>
-          </li>
-          <li>
-            <Link to='/red'>OmegaRuby-AlphaSapphire Version</Link>
-          </li>
-        </ol>
+      <button onClick={()=>this.gimmeI()}>Red Green Blue Yellow</button>
+      <button onClick={()=>this.gimmeII()}>Gold Sliver Crystal</button>
+      <button onClick={()=>this.gimmeIII()}>Ruby Sapphire FireRed Leaf Green Emerald</button>
+      <button onClick={()=>this.gimmeIV()}>Diamond Pearl Platinum HeartGold Soul Silver</button>
+      <button onClick={()=>this.gimmeV()}>Black White Black2 White2</button>
+      <button onClick={()=>this.gimmeVI()}>Omega Ruby X Alpha Sapphire Y</button>
 
-        <main>
-          <Route path='/red' render={I} />
-        </main>
+      {this.state.print}
       </div>
     )
   }
