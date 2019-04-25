@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Link } from "react-router-dom"
+
 
 class PokeGeneration extends Component{
 
@@ -117,12 +117,14 @@ constructor(props){
   render(){
     return(
       <div>
-      <button onClick={()=>this.gimmeI()}>Red Green Blue Yellow</button>
-      <button onClick={()=>this.gimmeII()}>Gold Sliver Crystal</button>
-      <button onClick={()=>this.gimmeIII()}>Ruby Sapphire FireRed Leaf Green Emerald</button>
-      <button onClick={()=>this.gimmeIV()}>Diamond Pearl Platinum HeartGold Soul Silver</button>
-      <button onClick={()=>this.gimmeV()}>Black White Black2 White2</button>
-      <button onClick={()=>this.gimmeVI()}>Omega Ruby X Alpha Sapphire Y</button>
+      <h1>Start clicking to see the pokemon series expand over the years</h1>
+
+      <button class="button is-rounded" className="button-1"onClick={()=>this.gimmeI()}>Red Green Blue Yellow</button>
+      <button class="button is-rounded" className="button-2"onClick={()=>this.gimmeII()}>Gold Sliver Crystal</button>
+      <button class="button is-rounded" className="button-3"onClick={()=>this.gimmeIII()}>Ruby Sapphire FireRed Leaf Green Emerald</button>
+      <button class="button is-rounded" className="button-4"onClick={()=>this.gimmeIV()}>Diamond Pearl Platinum HeartGold Soul Silver</button>
+      <button class="button is-rounded" className="button-5"onClick={()=>this.gimmeV()}>Black White Black2 White2</button>
+      <button class="button is-rounded" className="button-6"onClick={()=>this.gimmeVI()}>Omega Ruby X Alpha Sapphire Y</button>
 
       {this.state.print}
       </div>
@@ -131,39 +133,3 @@ constructor(props){
 }
 
 export default PokeGeneration
-
-//
-// {
-//   this.state.generation.map(game => {
-//                 console.log(this.state.generation[0])
-//     return(
-//       <div key={game.url}>
-//       <h3>{game.name}</h3>
-//       </div>
-//
-//     )
-//   })
-// }
-
-
-
-// constructor(props){
-//   super(props);
-//   this.state = {
-//     generation: []
-//   }
-// }
-// componentDidMount(){
-//       this.displayGenerations();
-// }
-//
-// displayGenerations(){
-//   fetch(`https://pokeapi.co/api/v2/version-group`)
-//     .then(response => response.json())
-//     .then(data =>{
-//       this.setState({
-//         generation: data.results
-//       })
-//                 console.log(data.results)
-//     })
-// }

@@ -1,33 +1,72 @@
 import React, { Component } from 'react'
 import { Route, Link } from "react-router-dom";
-import PokeGeneration from './PokeGeneration'
-import PokeList from './PokeList'
-import PokeInfo from './PokeInfo'
+import PokeGeneration from './Generation/PokeGeneration'
+import Home from './Home'
+
 
 class Navbar extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      pokemon: []
+    }
+  }
+
+  componentDidMount(){
+        this.handleOnClick()
+  }
+
+  handleOnClick(){
+    fetch(`https://pokeapi.co/api/v2/pokedex/1/`)
+      .then(response => response.json())
+      .then(data =>{
+        this.setState({
+          pokemon: data.pokemon_entries
+        })
+      })
+  }
   render(){
+    const { pokemon } = this.state
     return(
       <div>
-        <nav className='navbar'>
-          <ul>
-            <li>
-              <Link to='/pokegeneration'>PokeGeneration</Link>
-            </li>
-            <li>
-              <Link to='/pokelist'>PokeList</Link>
-            </li>
-            <li>
-              <Link to='/pokeInfo'>PokeInfo</Link>
-            </li>
-          </ul>
-        </nav>
 
-        <main>
-          <Route path='/pokegeneration' component={PokeGeneration} />
-          <Route path='/pokelist' component={PokeList} />
-          <Route path='/pokeinfo' render={PokeInfo} />
-        </main>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://bulma.io">
+            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+          </a>
+
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item">
+              <Link to='/home'>Home</Link>
+            </a>
+
+            <a class="navbar-item">
+              <Link to='/pokegeneration'>PokeGeneration</Link>
+            </a>
+
+          </div>
+
+        </div>
+      </nav>
+
+      <main>
+          <Route exact path='/home' render={Home} />
+          <Route exact path='/pokegeneration'
+          render={()=> <PokeGeneration poke={pokemon} />}
+            />
+      </main>
+
       </div>
+
 
     )
   }
