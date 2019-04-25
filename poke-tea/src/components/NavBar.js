@@ -66,7 +66,7 @@ class Navbar extends Component{
       <main>
           <Route exact path='/home' component={Home} />
 
-          <Route exact path='/contact' render={Contact} />
+          <Route exact path='/contact' component={Contact} />
 
           <Route exact path='/pokegeneration'
           render={()=> <PokeGeneration poke={pokemon} />}
