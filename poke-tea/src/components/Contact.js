@@ -3,9 +3,12 @@ import React, { Component } from 'react'
 class Contact extends Component{
 
   handleOnSubmit(){
+    return(
     alert('Thank you for you feed back!')
+    )
   }
-  handleOnSubmit = this.handleOnSubmit.bind(this)
+
+
 
   render(){
   return(
@@ -53,7 +56,7 @@ class Contact extends Component{
 
   <div class="field is-grouped" >
     <div class="control">
-      <button class="button is-link" onclick={this.handleOnSubmit}>Submit</button>
+      <button class="button is-link" onclick={this.handleOnSubmit()}>Submit</button>
     </div>
     <div class="control">
       <button class="button is-text">Cancel</button>
