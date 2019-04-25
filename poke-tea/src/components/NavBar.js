@@ -64,7 +64,7 @@ class Navbar extends Component{
       </nav>
 
       <main>
-          <Route exact path='/home' render={Home} />
+          <Route exact path='/home' component={Home} />
 
           <Route exact path='/contact' render={Contact} />
 
