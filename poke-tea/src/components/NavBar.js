@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route, Link } from "react-router-dom";
 import PokeGeneration from './Generation/PokeGeneration'
 import Home from './Home'
+import Contact from './Contact'
 
 
 class Navbar extends Component{
@@ -32,8 +33,8 @@ class Navbar extends Component{
 
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
-            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+          <a class="navbar-item" href="https://www.pokemon.com/us/">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/81dewrr6%2BWL._SL1500_.jpg" />
           </a>
 
           <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -53,6 +54,10 @@ class Navbar extends Component{
               <Link to='/pokegeneration'>PokeGeneration</Link>
             </a>
 
+            <a class="navbar-item">
+              <Link to='/contact'>Contact</Link>
+            </a>
+
           </div>
 
         </div>
@@ -60,6 +65,9 @@ class Navbar extends Component{
 
       <main>
           <Route exact path='/home' render={Home} />
+
+          <Route exact path='/contact' render={Contact} />
+
           <Route exact path='/pokegeneration'
           render={()=> <PokeGeneration poke={pokemon} />}
             />

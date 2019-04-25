@@ -4,8 +4,7 @@ import React from 'react'
 function Home(){
   return(
     <div>
-    <h1>I am the Home screen</h1>
-    <img src="" alt=""/>
+    <img src="https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Eeveelutions-Wallpapers-HD-PIC-WPB007051.jpg" alt="image"/>
     </div>
   )
 }

@@ -4,9 +4,8 @@ function Footer(){
   return(
     <div className="footer">
       <ol>
-        <li>Pokemon Logo</li>
-        <li>&copy;</li>
-        <li>SOmething extra</li>
+        <img src="https://fontmeme.com/images/Pokemon-Logo.jpg" width="250" height="200" alt="logo" />
+        <a href="https://github.com/cstrong03">Check out my github</a>
       </ol>
     </div>
   )

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-
 class PokeGeneration extends Component{
 
 constructor(props){
@@ -16,12 +15,14 @@ constructor(props){
       counter++;
       let srcLink = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`
         if (counter < 152){
-          return (<div key={pokemon.entry_number}>
-                <p>{pokemon.pokemon_species.name}</p>
+          return(
+            <div key={pokemon.entry_number}>
+              <h6>{pokemon.pokemon_species.name}</h6>
                 <img src={srcLink} alt='images'/>
-            </div>)
+            </div>
+          )
         }
-        })
+      })
         this.setState({
         print: i
       })
@@ -50,12 +51,14 @@ constructor(props){
       counter++;
       let srcLink = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`
         if (counter > 251 && counter < 387){
-          return (<div key={pokemon.entry_number}>
-                <p>{pokemon.pokemon_species.name}</p>
+          return(
+            <div key={pokemon.entry_number}>
+              <p>{pokemon.pokemon_species.name}</p>
                 <img src={srcLink} alt='images'/>
-            </div>)
+            </div>
+          )
         }
-        })
+      })
         this.setState({
         print: i
       })
@@ -116,17 +119,21 @@ constructor(props){
 
   render(){
     return(
-      <div>
-      <h1>Start clicking to see the pokemon series expand over the years</h1>
+      <div className="body">
+      <h1 className="intro">Start clicking to see the pokemon series expand over the years</h1>
 
-      <button class="button is-rounded" className="button-1"onClick={()=>this.gimmeI()}>Red Green Blue Yellow</button>
-      <button class="button is-rounded" className="button-2"onClick={()=>this.gimmeII()}>Gold Sliver Crystal</button>
-      <button class="button is-rounded" className="button-3"onClick={()=>this.gimmeIII()}>Ruby Sapphire FireRed Leaf Green Emerald</button>
-      <button class="button is-rounded" className="button-4"onClick={()=>this.gimmeIV()}>Diamond Pearl Platinum HeartGold Soul Silver</button>
-      <button class="button is-rounded" className="button-5"onClick={()=>this.gimmeV()}>Black White Black2 White2</button>
-      <button class="button is-rounded" className="button-6"onClick={()=>this.gimmeVI()}>Omega Ruby X Alpha Sapphire Y</button>
+      <button className="button-1" onClick={()=>this.gimmeI()}>Red Green Blue Yellow</button>
+      <button className="button-2" onClick={()=>this.gimmeII()}>Gold Sliver Crystal</button>
+      <button className="button-3"onClick={()=>this.gimmeIII()}>Ruby Sapphire FireRed Leaf Green Emerald</button>
+      <button className="button-4"onClick={()=>this.gimmeIV()}>Diamond Pearl Platinum HeartGold Soul Silver</button>
+      <button className="button-5"onClick={()=>this.gimmeV()}>Black White Black2 White2</button>
+      <button className="button-6"onClick={()=>this.gimmeVI()}>Omega Ruby X Alpha Sapphire Y</button>
 
+
+      <div className="gen1">
       {this.state.print}
+      </div>
+
       </div>
     )
   }
